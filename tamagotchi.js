@@ -1,6 +1,8 @@
 let health = 100;
 let happiness = 100;
 let energy = 100;
+let attack = 100;
+let defense = 100;
 
 
 
