@@ -5,6 +5,12 @@ let attack = 100;
 let defense = 100;
 
 
+// let findFood 
+// let sleep
+// let eat
+// let play
+
+
 
 class Pet {
     constructor(type, name, colour, sex, superpower) {
@@ -23,36 +29,72 @@ class Unicorn extends Pet {
     constructor(type, name, colour, sex, superpower, magic) {
       super(type, name, colour, sex, superpower);
       this.power = magic;
-      if (sex == "Male") {
-          health = health - 10;
+      if (type == "Unicorn" && sex == "Male") {
+        health = health - 10;
+      } else {
+        attack = attack + 10;
       }
+      if (colour == "white" || colour == "black") {
+        happiness = happiness + 10;
+      } else {
+        happiness = happiness - 10;
+      }
+     
     }
-    show() {
-      return this.present() + ', it is a ' + this.power;
+    show1() { 
+      return this.present() + ', it is ' + this.power;
+
     }
 }
 
 class Seahorse extends Pet {
     constructor(type, name, colour, sex, superpower, sleeping) {
-      super(type, name, colour, sex, superpower, eating);
-      this.power = sleeping;
+      super(type, name, colour, sex, superpower);
+      this.power2 = sleeping;
+      if (type == "Unicorn" && sex == "Female") {
+        health = health + 10;
+      } else {
+        attack = attack -10;
+      }
+      if (colour == "red" || colour == "blue") {
+        happiness = happiness + 10;
+      } else {
+        happiness = happiness - 10;
+      }
     }
-    show() {
-      return this.present() + ', it is a ' + this.power;
+    show2() {
+      return this.present() + ', it is ' + this.power2;
     }
 }
 
 class Tiger extends Pet {
     constructor(type, name, colour, sex, superpower, eating) {
       super(type, name, colour, sex, superpower);
-      this.power = eating;
+      this.power3 = eating;
+      if (type == "Unicorn" && sex == "Male") {
+        attack = attack + 10;
+      } else {
+        attack = attack - 10;
+      }
+      if (colour == "yellow" || colour == "brown") {
+        happiness = happiness + 10;
+      } else {
+        happiness = happiness - 10;
+      }
+      
     
     }
-    show() {
-      return this.present() + ', it is a ' + this.power;
+    show3() {
+      return this.present() + ', it is ' + this.power3;
     }
 }
   
-example = new Unicorn("Unicorn", "Don", "White", "Male", "flying");
-console.log(example.show());
-console.log(health);
+// example = new Unicorn("Unicorn", "Don", "White", "Male", "flying", "magic");
+// example2 = new Seahorse("Seahorse", "Don", "Blue", "Male", "flying", "sleeping");
+example3 = new Tiger("Tiger", "Don", "Blue", "Female", "flying", "sleeping");
+// console.log(example.show1());
+// console.log(health, happiness, energy, attack, defense);
+// console.log(example2.show2());
+// console.log(health, happiness, energy, attack, defense);
+console.log(example3.show3());
+console.log(health, happiness, energy, attack, defense);
